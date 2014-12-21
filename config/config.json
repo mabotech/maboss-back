@@ -1,0 +1,23 @@
+{
+    "comment":"nconf configuration file for maboss app 0.0.1",
+    "app":{
+        "name": "maboss",
+        "version":"0.0.1",
+        "keys": "mabo.secret",
+        "port": 6226
+        },
+        
+    "redis":{
+        "server": "127.0.0.1",
+        "port": 6379
+        },
+
+    "db":{
+        "con_string": "postgres://mabotech:mabouser@localhost:6432/maboss"
+    },
+
+    "logging":
+    {
+        "performance_threshold": 300
+    }
+}

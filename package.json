@@ -1,0 +1,51 @@
+{
+    "name": "maboss",
+    "description": "maboss web application platform",
+    "version": "0.0.1",
+    "keywords": [
+        "maboss",
+        "application",
+        "web",
+        "platform"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/mabotech/maboss-back.git"
+    },
+    "scripts": {
+        "start": "node --harmony server.js"
+    },
+    "engines": {
+        "node": ">= 0.11.9"
+    },
+    "files": [
+        "index.js",
+        "error.html"
+    ],
+    "devDependencies": {
+        "gulp":"*",
+        "koa": "koajs/koa",
+        "debug": "debug",
+        "mocha": "*",
+        "should": "*",
+        "Faker": "*"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "koa": "*",
+        "koa-route": "*",
+        "koa-router":"*",
+        "koa-error": "*",
+        "koa-session": "*",
+        "koa-body": "*",
+        "kue":"*",
+        "stacktrace-js":"*",
+        "pg.js": "",
+        "pg": "",
+        "koa-pg": "*",
+        "winston": "*",
+        "nconf": "*",
+        "redis": "*",
+        "swig": "^1.3.2"
+    }
+}   
