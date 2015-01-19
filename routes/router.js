@@ -43,11 +43,11 @@ module.exports = {
 
             api
                 .post('/fetch', dataset.fetch)
-            .post( '/work', dataset.work);
+                .post( '/work', dataset.work);
 
             api
-                .post( '/callproc.pgtime', callproc.pgtime)
-             .post( '/callproc.call', callproc.wcall);//for web call
+                .post( '/v1/callproc.pgtime', callproc.pgtime)
+                .post( '/v1/callproc.call', callproc.wcall);//for web call
 
             api.get( '/datatables.call', datatables.call);
             
@@ -63,15 +63,15 @@ module.exports = {
             app.use(mount(url_prefix, api.middleware()));
             
             //register.register_url(url_prefix, api);
-            /*
+            
                 var i=0;
                 for(i=0;i <api.routes.length; i++){
                     var path = api.routes[i].path;
                     var methods = api.routes[i].methods;
-                    logger.debug(url_prefix,path , methods);
+                    logger.debug(url_prefix, path , methods);
                     
                 }
-                */
+                
             
             //app.use(mount('/web', api.middleware()));
             

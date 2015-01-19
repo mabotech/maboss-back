@@ -13,7 +13,7 @@
         },
 
     "db":{
-        "con_string": "postgres://mabotech:mabouser@localhost:6432/maboss"
+        "con_string": "postgres://mabotech:mabouser@localhost:6432/monitor"
     },
 
     "logging":
