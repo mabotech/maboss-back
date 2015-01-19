@@ -17,8 +17,12 @@ var http = require('http');
 //var process = require('process');
 
 var koa = require('koa');
-var redis = require("redis");
-var session = require('koa-session');
+
+var session = require('koa-generic-session');
+var redisStore = require('koa-redis');
+
+//var redis = require("redis");
+//var session = require('koa-session');
 /*
  * logging
  */
@@ -157,6 +161,10 @@ var app = koa();
 
 app.keys = [nconf.get("app").keys];
 
+app.use(session({
+  store: redisStore()
+}));
+
 /*
 app.use(function *(next) {
   
@@ -250,15 +258,17 @@ app.use(koa_body());
  * redis config and connect
  */
 
-var client = redis.createClient(nconf.get('redis').port, nconf.get('redis').server, {});
-
+//var client = redis.createClient(nconf.get('redis').port, nconf.get('redis').server, {});
+/*
 client.on("error", function(err) {
     console.log("Error " + err);
 });
-
+*/
 /*
  * redis client
  */
+
+/*
 app.use(function * (next) {
 
     var start = new Date();
@@ -272,6 +282,8 @@ app.use(function * (next) {
     yield next;
 
 });
+
+*/
 
 
 /*
@@ -375,7 +387,7 @@ app.use(function * (next) {
 });
 
 //login
-app = config_login.login_mount(app);
+//app = config_login.login_mount(app);
 
 //mount Router
 app = config_router.app_mount(app);
